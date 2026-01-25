@@ -1,0 +1,151 @@
+
+<div class="dashboard-header">
+  <h1 class="dashboard-title">Welcome To Blackcoffer Dashboard 🎉</h1>
+
+  <button class="logout-btn" (click)="logout()">
+    Logout
+  </button>
+</div>
+
+
+
+<h3>Filters</h3>
+
+
+<form [formGroup]="filterForm" class="filter-bar">
+
+  <mat-form-field>
+  <mat-label>Topic</mat-label>
+
+  <mat-select formControlName="topic" (selectionChange)="onFilterChange()">
+    <mat-option value="">All Topics</mat-option>
+    <mat-option *ngFor="let t of topics" [value]="t">
+      {{ t }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Sector</mat-label>
+  <mat-select formControlName="sector" (selectionChange)="onFilterChange()">
+    <mat-option value="">All Sectors</mat-option>
+    <mat-option *ngFor="let s of sectors" [value]="s">
+      {{ s }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+  <mat-form-field>
+  <mat-label>Region</mat-label>
+  <mat-select formControlName="region" (selectionChange)="onFilterChange()">
+    <mat-option value="">All Regions</mat-option>
+    <mat-option *ngFor="let r of regions" [value]="r">
+      {{ r }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+  <mat-form-field>
+  <mat-label>Country</mat-label>
+  <mat-select formControlName="country" (selectionChange)="onFilterChange()">
+    <mat-option value="">All Countries</mat-option>
+    <mat-option *ngFor="let c of countries" [value]="c">
+      {{ c }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+  <mat-form-field>
+  <mat-label>PESTLE</mat-label>
+  <mat-select formControlName="pestle" (selectionChange)="onFilterChange()">
+    <mat-option value="">All PESTLE</mat-option>
+    <mat-option *ngFor="let p of pestles" [value]="p">
+      {{ p }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+    <mat-form-field>
+  <mat-label>Source</mat-label>
+  <mat-select formControlName="source" (selectionChange)="onFilterChange()">
+    <mat-option value="">All Sources</mat-option>
+    <mat-option *ngFor="let s of sources" [value]="s">
+      {{ s }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+  <mat-form-field>
+  <mat-label>End Year</mat-label>
+  <mat-select formControlName="end_year"(selectionChange)="onFilterChange()">
+    <mat-option value="">All End Years</mat-option>
+    <mat-option *ngFor="let y of endYears" [value]="y">
+      {{ y }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+</form>
+
+
+
+<button
+  mat-stroked-button
+  color="warn"
+  (click)="resetFilters()"
+  [disabled]="filterForm.pristine">
+  Reset Filters
+</button>
+
+
+<div class="charts-grid">
+  <div class="chart-card">
+    <h3>Intensity Trend by End Year</h3>
+    <div id="intensityChart"></div>
+  </div>
+
+  <div class="chart-card">
+    <h3>Insights by Sector</h3>
+    <div id="sectorChart"></div>
+  </div>
+</div>
+
+
+
+<h3>Insights List</h3>
+
+<div class="cards-container">
+  <div class="card" *ngFor="let item of insights">
+    <h3 class="title">{{ item.title }}</h3>
+
+    <p><strong>Sector:</strong> {{ item.sector || 'N/A' }}</p>
+    <p><strong>Topic:</strong> {{ item.topic || 'N/A' }}</p>
+    <p><strong>Region:</strong> {{ item.region || 'N/A' }}</p>
+    <p><strong>Country:</strong> {{ item.country || 'N/A' }}</p>
+
+    <div class="metrics">
+      <span>Intensity: {{ item.intensity }}</span>
+      <span>Relevance: {{ item.relevance }}</span>
+      <span>Likelihood: {{ item.likelihood }}</span>
+    </div>
+  </div>
+</div>
+<div class="page-info">
+  Showing page {{ currentPage }} of {{ totalPages }}  
+  ({{ totalCount }} results)
+</div>
+
+<div style="margin-top: 20px; text-align: center;">
+  <button (click)="prevPage()" [disabled]="currentPage === 1">
+    Previous
+  </button>
+
+  <span style="margin: 0 10px;">
+    Page {{ currentPage }}
+  </span>
+
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+    Next
+  </button>
+</div>
+

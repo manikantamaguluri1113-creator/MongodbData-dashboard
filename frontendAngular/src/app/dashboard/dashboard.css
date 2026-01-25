@@ -1,0 +1,272 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #e4d9d9bf;  
+  
+}
+
+.chart-card,
+.filters-container,
+.insights-card {
+  background: #f5f3f3bf;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+button {
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 14px;
+  background: #fff;
+}
+
+.card .title {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.metrics {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.summary-cards {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.card {
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-width: 150px;
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    #e4d9d9bf 0%,
+    #e3ab9f 100%
+  );
+}
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px; /* ✅ important */
+  align-items: start;
+}
+
+
+
+select, button {
+  padding: 6px;
+}
+/* .filters-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0;
+} */
+.filters-container {
+  overflow: visible;   /* ✅ MUST */
+  position: relative;
+  z-index: 10;
+}
+
+.filters-container select {
+  padding: 6px 10px;
+  min-width: 180px;
+}
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 12px;
+  /* background: #f8ececbf   ; */
+  background: linear-gradient(
+    180deg,
+    #e4d9d9bf 0%,
+    #e3ab9f 100%
+  );
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 20px;
+    box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+}
+
+.filter-group label {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.filter-group select {
+  padding: 6px;
+}
+
+.filter-actions {
+  display: flex;
+  align-items: flex-end;
+}
+
+.filter-actions button {
+  padding: 7px 14px;
+  cursor: pointer;
+}
+.page-info {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #444;
+}
+.chart-container {
+  margin-top: 24px;
+}
+
+svg {
+  width: 100%;
+  height: 400px;
+}
+#intensityChart {
+  margin: 30px 0;
+}
+.charts-row {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.chart-box {
+  flex: 1;
+  max-width: 50%;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* VERY IMPORTANT */
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .charts-row {
+    flex-direction: column;
+  }
+
+  .chart-box {
+    max-width: 100%;
+  }
+}
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+   /* background: #f8ececbf; */
+   background: linear-gradient(
+    180deg,
+    #e4d9d9bf 0%,
+    #e3ab9f 100%
+  );
+     box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.chart-card {
+  /* background: #f8ececbf; */
+ background: linear-gradient(
+    180deg,
+    #e4d9d9bf 0%,
+    #e3ab9f 100%
+  );
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* IMPORTANT for D3 */
+ 
+  padding: 20px;
+
+  /* Premium soft shadow */
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 900px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dashboard-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* center title */
+  padding: 20px 0;
+}
+
+/* Center title */
+.dashboard-title {
+  font-size: 36px;         
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Logout button top-right */
+.logout-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
