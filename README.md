@@ -1,6 +1,6 @@
 # 📊 MongoDB Data Visualization Dashboard
 
-An interactive, production-style data visualization dashboard built using **Angular**, **D3.js**, **Node.js**, and **MongoDB** to analyze and explore insights data provided by Blackcoffer.
+An interactive, production-style data visualization dashboard built using **Angular**, **D3.js**, **Node.js**, and **MongoDB** to analyze and explore insights data provided.
 
 The application focuses on transforming raw JSON data into meaningful business insights through filters, charts, and a polished UI.
 
@@ -77,7 +77,7 @@ A reset option restores the default state.
 ## 📁 Project Structure
 
 ```bash
-BlackCoffer-dashboard/
+Mongodb-dashboard/
 │
 ├── backend/                     # Backend API (Node.js / Express)
 │   ├── controllers/             # API controllers
