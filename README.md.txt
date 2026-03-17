@@ -1,4 +1,4 @@
-# 📊 Blackcoffer Data Visualization Dashboard
+# 📊 MongoDB Data Visualization Dashboard
 
 An interactive, production-style data visualization dashboard built using **Angular**, **D3.js**, **Node.js**, and **MongoDB** to analyze and explore insights data provided by Blackcoffer.
 
